@@ -1,0 +1,19 @@
+plugins {
+	id "com.liferay.source.formatter" version "3.0.6"
+	id "application"
+}
+
+group = "com.github.ithildir"
+
+application {
+	mainClassName = "${group}.test.beam.SpikeyWineries"
+}
+
+dependencies {
+	implementation group: "org.apache.beam", name: "beam-runners-direct-java", version: "2.19.0"
+	implementation group: "org.slf4j", name: "slf4j-simple", version: "1.7.25"
+}
+
+repositories {
+	mavenCentral()
+}
