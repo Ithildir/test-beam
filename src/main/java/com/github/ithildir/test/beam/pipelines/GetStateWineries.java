@@ -1,7 +1,8 @@
-package com.github.ithildir.test.beam;
+package com.github.ithildir.test.beam.pipelines;
+
+import com.github.ithildir.test.beam.PipelineBuilder;
 
 import org.apache.beam.sdk.Pipeline;
-import org.apache.beam.sdk.PipelineResult;
 import org.apache.beam.sdk.io.TextIO;
 import org.apache.beam.sdk.options.Default;
 import org.apache.beam.sdk.options.Description;
@@ -9,9 +10,10 @@ import org.apache.beam.sdk.options.PipelineOptions;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
 import org.apache.beam.sdk.transforms.Filter;
 
-public class GetStateWineries {
+public class GetStateWineries implements PipelineBuilder {
 
-	public static void main(String[] args) {
+	@Override
+	public Pipeline build(String[] args) {
 		GetStateWineriesOptions getStateWineriesOptions =
 			PipelineOptionsFactory.fromArgs(
 				args
@@ -43,9 +45,7 @@ public class GetStateWineries {
 			)
 		);
 
-		PipelineResult pipelineResult = pipeline.run();
-
-		pipelineResult.waitUntilFinish();
+		return pipeline;
 	}
 
 	public interface GetStateWineriesOptions extends PipelineOptions {

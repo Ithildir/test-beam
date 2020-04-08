@@ -6,7 +6,7 @@ plugins {
 group = "com.github.ithildir"
 
 application {
-	mainClassName = "${group}.test.beam.SpikeyWineries"
+	mainClassName = "${group}.test.beam.TestBeam"
 }
 
 dependencies {
