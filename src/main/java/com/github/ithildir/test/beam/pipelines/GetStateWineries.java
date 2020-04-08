@@ -54,8 +54,8 @@ public class GetStateWineries implements PipelineBuilder {
 		@Description("Path of the file to read from")
 		public String getInputFile();
 
-		@Default.String("output/result")
-		@Description("Path of the file to write to")
+		@Default.String("output/state-wineries")
+		@Description("Path of the directory to write to")
 		public String getOutputDir();
 
 		@Default.String("California")
